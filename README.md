@@ -1,6 +1,3 @@
-Here is a **GitHub Codespaces `README.md` example** based on the **Michigan Nature Sounds** app design shown in your image:
-
-```markdown
 # 🐺 Michigan Nature Sounds
 
 An interactive nature sound explorer featuring Michigan wildlife.
