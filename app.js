@@ -38,7 +38,17 @@ const animals = [
   ['katydid','Common True Katydid','Pterophylla camellifolia','Insects','Leafy forests','Hidden in the canopy, katydids call on warm nights with a raspy, rhythmic song.','A repeated katy-did'],
   ['cicada2','Periodical Cicada','Magicicada septendecim','Insects','Southern woodlands','After years underground, periodical cicadas emerge together in a spectacular noisy chorus.','A rising chorus'],
   ['treefrog','Gray Treefrog','Hyla versicolor','Insects','Ponds & gardens','Though not an insect, this tiny amphibian earns a place in the night chorus with its musical trill.','A soft, pulsing trill']
-].map(([id,name,scientificName,category,region,description,call]) => ({id,name,scientificName,category,region,description,call,image:imagePool[id] || imagePool[category === 'Birds' ? 'bird' : 'insect']}));
+].map(([id,name,scientificName,category,region,description,call]) => ({
+  id,
+  name,
+  scientificName,
+  category,
+  region,
+  description,
+  call,
+  image: imagePool[id] || imagePool[category === 'Birds' ? 'bird' : category === 'Insects' ? 'insect' : 'chipmunk'],
+  hasAudio: Boolean(audioPool[id])
+}));
 
 const list = document.querySelector('#species-list');
 const detail = document.querySelector('#species-detail');
@@ -71,16 +81,25 @@ function renderList() {
 function renderDetail() {
   const animal = animals.find((entry) => entry.id === selectedId) || categoryAnimals()[0];
   if (!animal) return;
+  const audioLabel = animal.hasAudio ? (isPlaying ? '❚❚ Pause' : '▶ Play sound') : 'Sound coming soon';
   detail.innerHTML = `
     <div class="detail-image" style="background-image:url('${animal.image}')"><span class="detail-index">${String(animals.indexOf(animal) + 1).padStart(2, '0')} / ${String(animals.length).padStart(2, '0')}</span></div>
-    <div class="detail-copy"><p class="eyebrow">${animal.region}</p><h3>${animal.name}</h3><p class="latin">${animal.scientificName}</p><p class="description">${animal.description}</p><div class="call-note">Signature call<strong>${animal.call}</strong></div><div class="sound-wave ${isPlaying ? '' : 'paused'}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="audio-controls"><button class="play-button" type="button" aria-pressed="${isPlaying}">${isPlaying ? '❚❚ Pause' : '▶ Play sound'}</button><button class="volume-button" type="button" aria-label="${isMuted ? 'Turn sound on' : 'Mute sound'}" aria-pressed="${isMuted}">${isMuted ? '◌' : '◖'}</button><button class="next-button" type="button" aria-label="Next animal">→</button></div></div>`;
+    <div class="detail-copy"><p class="eyebrow">${animal.region}</p><h3>${animal.name}</h3><p class="latin">${animal.scientificName}</p><p class="description">${animal.description}</p><div class="call-note">Signature call<strong>${animal.call}</strong></div><div class="sound-wave ${isPlaying ? '' : 'paused'}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="audio-controls"><button class="play-button" type="button" aria-pressed="${isPlaying}" ${animal.hasAudio ? '' : 'disabled'}>${audioLabel}</button><button class="volume-button" type="button" aria-label="${isMuted ? 'Turn sound on' : 'Mute sound'}" aria-pressed="${isMuted}">${isMuted ? '◌' : '◖'}</button><button class="next-button" type="button" aria-label="Next animal">→</button></div></div>`;
   detail.querySelector('.play-button').addEventListener('click', () => {
+    if (!animal.hasAudio) return;
     if (activeAudio) activeAudio.pause();
     if (!isPlaying && audioPool[animal.id]) {
       activeAudio = new Audio(audioPool[animal.id]);
       activeAudio.volume = isMuted ? 0 : 1;
       activeAudio.addEventListener('ended', () => { isPlaying = false; renderDetail(); }, { once: true });
-      activeAudio.play().catch(() => {});
+      activeAudio.play().then(() => {
+        isPlaying = true;
+        renderDetail();
+      }).catch(() => {
+        isPlaying = false;
+        renderDetail();
+      });
+      return;
     }
     isPlaying = !isPlaying;
     renderDetail();
