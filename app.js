@@ -46,6 +46,7 @@ const count = document.querySelector('#species-count');
 let selectedCategory = 'Mammals';
 let selectedId = 'wolf';
 let isPlaying = false;
+let isMuted = false;
 let activeAudio;
 
 function categoryAnimals() { return animals.filter((animal) => animal.category === selectedCategory); }
@@ -72,15 +73,21 @@ function renderDetail() {
   if (!animal) return;
   detail.innerHTML = `
     <div class="detail-image" style="background-image:url('${animal.image}')"><span class="detail-index">${String(animals.indexOf(animal) + 1).padStart(2, '0')} / ${String(animals.length).padStart(2, '0')}</span></div>
-    <div class="detail-copy"><p class="eyebrow">${animal.region}</p><h3>${animal.name}</h3><p class="latin">${animal.scientificName}</p><p class="description">${animal.description}</p><div class="call-note">Signature call<strong>${animal.call}</strong></div><div class="sound-wave ${isPlaying ? '' : 'paused'}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="audio-controls"><button class="play-button" type="button" aria-pressed="${isPlaying}">${isPlaying ? '❚❚ Pause' : '▶ Play sound'}</button><button class="volume-button" type="button" aria-label="Toggle volume">◖</button><button class="next-button" type="button" aria-label="Next animal">→</button></div></div>`;
+    <div class="detail-copy"><p class="eyebrow">${animal.region}</p><h3>${animal.name}</h3><p class="latin">${animal.scientificName}</p><p class="description">${animal.description}</p><div class="call-note">Signature call<strong>${animal.call}</strong></div><div class="sound-wave ${isPlaying ? '' : 'paused'}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="audio-controls"><button class="play-button" type="button" aria-pressed="${isPlaying}">${isPlaying ? '❚❚ Pause' : '▶ Play sound'}</button><button class="volume-button" type="button" aria-label="${isMuted ? 'Turn sound on' : 'Mute sound'}" aria-pressed="${isMuted}">${isMuted ? '◌' : '◖'}</button><button class="next-button" type="button" aria-label="Next animal">→</button></div></div>`;
   detail.querySelector('.play-button').addEventListener('click', () => {
     if (activeAudio) activeAudio.pause();
     if (!isPlaying && audioPool[animal.id]) {
       activeAudio = new Audio(audioPool[animal.id]);
+      activeAudio.volume = isMuted ? 0 : 1;
       activeAudio.addEventListener('ended', () => { isPlaying = false; renderDetail(); }, { once: true });
       activeAudio.play().catch(() => {});
     }
     isPlaying = !isPlaying;
+    renderDetail();
+  });
+  detail.querySelector('.volume-button').addEventListener('click', () => {
+    isMuted = !isMuted;
+    if (activeAudio) activeAudio.volume = isMuted ? 0 : 1;
     renderDetail();
   });
   detail.querySelector('.next-button').addEventListener('click', nextAnimal);
@@ -89,6 +96,7 @@ function renderDetail() {
 function nextAnimal() {
   const visible = categoryAnimals();
   const nextIndex = (visible.findIndex((animal) => animal.id === selectedId) + 1) % visible.length;
+  if (activeAudio) activeAudio.pause();
   selectedId = visible[nextIndex].id;
   isPlaying = false;
   renderList();
