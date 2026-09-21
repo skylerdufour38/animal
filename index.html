@@ -3,33 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#153f3b" />
-    <title>Michigan Nature Sounds</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#102a4f" />
+    <meta name="description" content="Browse classic iPad 1st generation archive apps for iOS 2.x–5.x." />
+    <title>iPad 1st Gen IPA Archive</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <a class="museum-mark" href="#top" aria-label="Ann Arbor Hands-On Museum home"><span class="mark-icon" aria-hidden="true">✣</span><span><strong>Ann Arbor</strong><small>Hands-On Museum</small></span></a>
-        <div class="header-note"><span class="live-dot"></span> Field guide · Michigan</div>
-        <button class="sound-toggle" type="button" aria-label="Toggle ambient sound" aria-pressed="false"><span aria-hidden="true">◌</span> Ambient sound</button>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-icon">iPad</div>
+          <div>
+            <p class="eyebrow">Archive browser</p>
+            <h1>iPad 1st Gen IPA Archive</h1>
+          </div>
+        </div>
+        <div class="status-pill">iOS 2.2–5.0</div>
       </header>
-      <main id="top">
-        <section class="hero" aria-labelledby="page-title">
-          <div class="hero-copy"><p class="eyebrow">A listening field guide</p><h1 id="page-title">Michigan<br /><em>Nature Sounds</em></h1><p class="hero-intro">Tune in to the wild places of Michigan. Meet the animals that live here, one sound at a time.</p><div class="hero-meta"><span>◒</span> 22 species to discover <span class="meta-line"></span> <span>◷</span> Made for curious ears</div></div>
-          <div class="hero-art" aria-label="A gray wolf in a Michigan forest"><div class="sun-disc"></div><div class="hero-rings"></div><div class="hero-visual"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1100&q=85" alt="Gray wolf looking across a forest clearing" /><div class="image-label"><span>01</span><span>Featured sound</span></div></div><span class="hero-caption">Canis lupus <i>·</i> Upper Peninsula</span></div>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <section class="panel filters-panel">
+            <div class="panel-header">
+              <h2>Search archive</h2>
+            </div>
+
+            <label class="field-label" for="searchInput">App name / bundle</label>
+            <input id="searchInput" type="search" placeholder="Search by app or bundle ID" />
+
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="minOsFilter">Minimum iOS</label>
+                <select id="minOsFilter">
+                  <option value="all">All versions</option>
+                  <option value="2.2">iOS 2.2+</option>
+                  <option value="2.2.1">iOS 2.2.1+</option>
+                  <option value="3.0">iOS 3.0+</option>
+                  <option value="3.1">iOS 3.1+</option>
+                  <option value="3.1.2">iOS 3.1.2+</option>
+                  <option value="3.1.3">iOS 3.1.3+</option>
+                  <option value="3.2">iOS 3.2+</option>
+                  <option value="4.0">iOS 4.0+</option>
+                  <option value="5.0">iOS 5.0+</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="field-label" for="sortFilter">Sort</label>
+                <select id="sortFilter">
+                  <option value="name">Name</option>
+                  <option value="version">Version</option>
+                  <option value="ios">Minimum iOS</option>
+                </select>
+              </div>
+            </div>
+
+            <button id="resetFilters" class="secondary-button" type="button">Reset filters</button>
+          </section>
+
+          <section class="panel stats-panel">
+            <div class="panel-header">
+              <h2>Collection</h2>
+            </div>
+            <div class="stats-grid">
+              <div>
+                <strong id="statsCount">0</strong>
+                <span>Apps</span>
+              </div>
+              <div>
+                <strong id="statsMin">0</strong>
+                <span>Min iOS</span>
+              </div>
+              <div>
+                <strong id="statsLatest">0</strong>
+                <span>Latest</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content-panel">
+          <div class="panel-header content-header">
+            <div>
+              <p class="eyebrow">Classic apps</p>
+              <h2>Archive collection</h2>
+            </div>
+            <div id="resultsBadge" class="results-badge">0 results</div>
+          </div>
+
+          <div id="appList" class="app-list" aria-live="polite"></div>
         </section>
-        <section class="explorer" aria-labelledby="explore-title">
-          <div class="section-heading"><div><p class="eyebrow">Start exploring</p><h2 id="explore-title">Choose your habitat</h2></div><p class="results-count"><strong id="species-count">11</strong> species in view</p></div>
-          <div class="category-tabs" role="tablist" aria-label="Animal categories"><button class="category-tab active" type="button" role="tab" aria-selected="true" data-category="Mammals"><span>◉</span> Mammals <b>11</b></button><button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Birds"><span>⌁</span> Birds <b>6</b></button><button class="category-tab" type="button" role="tab" aria-selected="false" data-category="Insects"><span>✳</span> Insects <b>5</b></button></div>
-          <div class="species-layout"><div class="species-list" id="species-list" aria-live="polite"></div><article class="species-detail" id="species-detail" aria-live="polite"></article></div>
-        </section>
+
+        <aside class="detail-panel">
+          <div id="appDetail" class="app-detail" aria-live="polite"></div>
+        </aside>
       </main>
-      <footer class="site-footer"><span>Ann Arbor Hands-On Museum</span><span>Listen closely. Look around.</span><span>MI · 2024</span></footer>
     </div>
-    <script src="app.js" type="module"></script>
+
+    <script src="app.js"></script>
   </body>
 </html>
