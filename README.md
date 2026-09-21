@@ -1,204 +1,306 @@
-# 🐺 Michigan Nature Sounds
+# iPad 1st Generation IPA Archive Web App
 
-An interactive nature sound explorer featuring Michigan wildlife.
+A GitHub Pages + GitHub Codespaces-ready web app for browsing classic iOS applications designed for early iPad / iOS 2.x–5.x environments.
 
-Explore animals by category, view species information, and listen to authentic wildlife sounds.
+## Project Information
 
-![Michigan Nature Sounds App Preview](Michigan%20Nature%20Sounds%20Wolf%20App.png)
-
----
-
-## 🌲 App Overview
-
-```
-
-Ann Arbor Hands-On Museum
-↓
-Michigan Nature Sounds
-↓
-Choose Category
-↓
-┌──────────┬─────────┬──────────┐
-│ Mammals  │ Birds   │ Insects  │
-└──────────┴─────────┴──────────┘
-↓
-Select Species
-↓
-🔊 Play Animal Audio
-
-```
+**Platform:** iPad 1st Generation  
+**Target OS Range:** iOS 2.2 – iOS 5.0  
+**Web App Type:** GitHub Pages Static Web App  
+**Development Environment:** GitHub Codespaces Ready  
 
 ---
 
-# 🐾 Categories
+# App Archive Collection
 
-## Mammals
+## Animal Sounds
 
-Examples:
-
-- Eastern Chipmunk  
-  *Tamias striatus*
-
-- Red Squirrel  
-  *Tamiasciurus hudsonicus*
-
-- Eastern Gray Squirrel  
-  *Sciurus carolinensis*
-
-- Meadow Vole  
-  *Microtus pennsylvanicus*
-
-- Gray Wolf  
-  *Canis lupus*
-
-- Coyote  
-  *Canis latrans*
-
-- Red Fox  
-  *Vulpes vulpes*
-
-- Black Bear  
-  *Ursus americanus*
-
-- Northern Raccoon  
-  *Procyon lotor*
-
-- Bobcat  
-  *Lynx rufus*
-
-- White-tailed Deer  
-  *Odocoileus virginianus*
+- App Name: Animal Sounds
+- Bundle ID: com.smartbabyapps.animalsounds
+- Version: 2.0
+- Platform: iOS
+- Minimum OS: iOS 3.1
+- IPA File: Animal Sounds 2.0.ipa
 
 ---
 
-# 🐺 Species Example: Gray Wolf
+## SoundTouch
 
-## Gray Wolf
-
-**Scientific Name**
-
-```
-
-Canis lupus
-
-```
-
-**Description**
-
-> The gray wolf is Michigan’s largest native land predator.  
-> It typically lives in packs and has a strong, distinctive howl.
+- App Name: SoundTouch
+- Bundle ID: com.yourcompany.SoundTouch
+- Version: 1.4
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: SoundTouch 1.4.ipa
 
 ---
 
-## 🔊 Audio Controls
+## Tozzle
 
-```
-
-▶ Play Sound
-
-🔊 Speaker Button
-
-➡ Next Animal
-
-```
+- App Name: Tozzle
+- Bundle ID: com.nodeflexion.Tozzle
+- Version: 3.7
+- Platform: iOS
+- Minimum OS: iOS 3.1.3
+- IPA File: Tozzle 3.7.ipa
 
 ---
 
-# 📂 Project Structure
+## AutismXpress
+
+- App Name: AutismXpress
+- Bundle ID: X7WS995LSR.com.StudioEmotion.AutismXpress
+- Version: 1.0
+- Platform: iOS
+- Minimum OS: iOS 3.1.2
+- IPA File: AutismXpress 1.0.ipa
+
+---
+
+## Lunchbox
+
+- App Name: Lunchbox
+- Bundle ID: com.thup.MonkeyPreschool
+- Version: 1.4
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Lunchbox 1.4.ipa
+
+---
+
+## Peek-a-Zoo
+
+- App Name: Peek-a-Zoo
+- Bundle ID: com.duckduckmoosedesign.peekazoo
+- Version: 1.1.1
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Peek-a-Zoo 1.1.1.ipa
+
+---
+
+## Michigan Nature Sounds
+
+- App Name: Michigan Nature Sounds
+- Bundle ID: com.yourcompany.MichiganNatureSounds
+- Version: 1.0
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Michigan Nature Sounds 1.0.ipa
+
+---
+
+## Peek-a-Zoo (Alternative Build)
+
+- App Name: Peek-a-Zoo
+- Bundle ID: com.tbd.pazCLL
+- Version: 1.0
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Peek-a-Zoo 1.0.ipa
+
+---
+
+## Artsee
+
+- App Name: Artsee
+- Bundle ID: com.britejar.artsee
+- Version: 1.1
+- Platform: iOS
+- Minimum OS: iOS 2.2
+- IPA File: Artsee 1.1.ipa
+
+---
+
+## Angry Birds
+
+- App Name: Angry Birds
+- Bundle ID: com.rovio.AngryBirdsHalloween
+- Version: 1.5.3
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Angry Birds 1.5.3.ipa
+
+---
+
+## Farm Flip Fun
+
+- App Name: Farm Flip Fun
+- Bundle ID: lv.yapp.farmflipfun
+- Version: 1.0
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Farm Flip Fun 1.0.ipa
+
+---
+
+## Farm Story
+
+- App Name: Farm Story
+- Bundle ID: com.teamlava.farmstory
+- Version: 1.2
+- Platform: iOS
+- Minimum OS: iOS 3.0
+- IPA File: Farm Story 1.2.ipa
+
+---
+
+## Stickers
+
+- App Name: Stickers
+- Bundle ID: com.nightanddaystudios.ericcarlestickers
+- Version: 1.0
+- Platform: iOS
+- Minimum OS: iOS 5.0
+- IPA File: Stickers 1.0.ipa
+
+---
+
+## Forest
+
+- App Name: Forest
+- Bundle ID: com.nightanddaystudios.peekabooforest
+- Version: 1.1.0
+- Platform: iOS
+- Minimum OS: iOS 3.1.3
+- IPA File: Forest 1.1.0.ipa
+
+---
+
+## Virtuoso
+
+- App Name: Virtuoso
+- Bundle ID: com.peterb.virtuosopianofree
+- Version: 3.1.2
+- Platform: iOS
+- Minimum OS: iOS 4.0
+- IPA File: Virtuoso 3.1.2.ipa
+
+---
+
+## ABC Tracer
+
+- App Name: ABC Tracer
+- Bundle ID: com.appzoo.ABCTracer
+- Version: 1.8
+- Platform: iOS
+- Minimum OS: iOS 2.2.1
+- IPA File: ABC Tracer 1.8.ipa
+
+---
+
+## Peek Wild
+
+- App Name: Peek Wild
+- Bundle ID: com.nightanddaystudios.peekaboowild
+- Version: 2.0.1
+- Platform: iOS
+- Minimum OS: iOS 3.1.3
+- IPA File: Peek Wild 2.0.1.ipa
+
+---
+
+## Peekaboo
+
+- App Name: Peekaboo
+- Bundle ID: com.nightanddaystudios.peekaboobarn
+- Version: 2.0
+- Platform: iOS
+- Minimum OS: iOS 2.2
+- IPA File: Peekaboo 2.0.ipa
+
+---
+
+## Finding Sight
+
+- App Name: Finding Sight
+- Bundle ID: my.finding3
+- Version: 2.1
+- Platform: iOS
+- Minimum OS: iOS 3.2
+- IPA File: Finding Sight 2.1.ipa
+
+---
+
+## ArtikPix
+
+- App Name: ArtikPix
+- Bundle ID: com.rinnapps.artikpix.iap
+- Version: 1.2.4
+- Platform: iOS
+- Minimum OS: iOS 3.1
+- IPA File: ArtikPix 1.2.4.ipa
+
+---
+
+# Repository Structure
 
 ```
-
-Michigan-Nature-Sounds/
+iPad-IPA-Archive/
 │
 ├── README.md
-│
 ├── index.html
 ├── style.css
-├── app.js
+├── script.js
 │
-├── images/
-│   ├── wolf.jpg
-│   ├── fox.jpg
-│   ├── bear.jpg
-│   └── deer.jpg
+├── ipa/
+│   ├── Animal Sounds 2.0.ipa
+│   ├── SoundTouch 1.4.ipa
+│   ├── Tozzle 3.7.ipa
+│   └── ...
 │
-├── audio/
-│   ├── wolf-howling.mp3
-│   ├── fox.mp3
-│   └── bear.mp3
-│
-└── data/
-└── animals.json
-
-````
-
----
-
-# 🗂 Animal Data Example
-
-`animals.json`
-
-```json
-{
-  "name": "Gray Wolf",
-  "scientificName": "Canis lupus",
-  "category": "Mammals",
-  "image": "images/wolf.jpg",
-  "sound": "audio/wolf-howling.mp3",
-  "description": "Michigan's largest native land predator."
-}
-````
-
----
-
-# 🚀 Running in GitHub Codespaces
-
-1. Open this repository in GitHub Codespaces
-
-2. Start the development server:
-
-```bash
-python3 -m http.server 8000
+└── assets/
+    ├── icons/
+    ├── screenshots/
+    └── metadata.json
 ```
 
-3. Open:
+# GitHub Pages Deployment
+
+1. Create GitHub Repository
+2. Upload project files
+3. Enable:
 
 ```
-http://localhost:8000
+Settings
+→ Pages
+→ Deploy from Branch
+→ main
+→ /root
 ```
 
----
-
-# 📱 App Features
-
-✅ Wildlife categories
-✅ Animal images
-✅ Scientific names
-✅ Audio playback
-✅ Touch-friendly interface
-✅ iPad-style layout
-✅ Michigan ecosystem focus
-
----
-
-# 🦌 Future Additions
-
-* More Michigan species
-* Bird identification section
-* Insect sound library
-* Offline audio support
-* iOS / iPad app version
-* Museum kiosk mode
-
----
-
-## License
-
-Educational nature project.
+Your web app will be available at:
 
 ```
-
-This README layout matches the flow shown in the screenshot:
-
-**Museum → Michigan Nature Sounds → Category → Species → Image + Description → Play Animal Sound**.
+https://USERNAME.github.io/REPOSITORY/
 ```
+
+# GitHub Codespaces
+
+Open in Codespaces:
+
+```
+Code
+→ Codespaces
+→ Create codespace on main
+```
+
+Development files:
+
+```
+index.html
+style.css
+script.js
+README.md
+```
+
+# Features
+
+- iPad 1st Generation archive browser
+- IPA metadata display
+- App name search
+- Bundle ID lookup
+- Version filtering
+- Minimum iOS filtering
+- GitHub Pages hosting
+- GitHub Codespaces development
